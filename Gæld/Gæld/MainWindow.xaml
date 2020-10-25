@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
-        <local1:DebtList/>
+        <local1:Mvvm/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -25,7 +25,7 @@
 
         </Grid.ColumnDefinitions>
         <TextBlock Text="Gæld:" Grid.Row="1" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" Margin="31,0.333,29.333,57.333" Grid.RowSpan="2"  />
-        <Button  Content="Tilføj Gæld" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Margin="1.667,5.333,2.333,5.333" Width="62" />
+        <Button  Content="Tilføj Gæld" Command="{Binding addNew}" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Margin="1.667,5.333,2.333,5.333" Width="62" />
         <ListBox Grid.Row="1" Name="listen" Grid.ColumnSpan="2" Margin="107,30.333,0.333,0.333" Grid.RowSpan="2"/>
         <StackPanel x:Name="nyDebt" HorizontalAlignment="Center" Height="100" Width="300" VerticalAlignment="Top" IsEnabled="False">
             <TextBlock Text="Heeeeey"/>
