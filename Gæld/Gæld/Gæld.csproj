@@ -147,8 +147,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Database\DebtBookContext.cs" />
+    <Compile Include="Database\IRepository.cs" />
     <Compile Include="Database\Models\Debt.cs" />
     <Compile Include="Database\Models\Person.cs" />
+    <Compile Include="Database\Repository.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

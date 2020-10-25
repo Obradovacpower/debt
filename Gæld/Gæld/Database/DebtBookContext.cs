@@ -12,6 +12,7 @@ namespace Gæld.Database
     {
         protected override void OnConfiguring(DbContextOptionsBuilder ob)
         {
+            //connect here
             //ob.UseSqlServer(@"Data Source=localhost,1433;Database=vareDatabase;User ID=SA;Password=SecPass1;");
         }
         public DbSet<Person> Persons { get; set; }
