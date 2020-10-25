@@ -20,7 +20,8 @@ namespace Gæld
             {
                 return _addNew ?? (_addNew = new DelegateCommand(() =>
                 {
-                    MessageBox.Show("Yeeeha");
+                    AddNewDebt a = new AddNewDebt();
+                    a.Show();
                 }));
             }
         }
