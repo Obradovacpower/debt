@@ -11,19 +11,28 @@
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="14.333"/>
-            <RowDefinition Height="29.667"/>
-            <RowDefinition Height="57"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="330*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="156*"/>
-            <ColumnDefinition Width="66*"/>
-            <ColumnDefinition Width="65*"/>
-            <ColumnDefinition Width="399*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="249*"/>
 
         </Grid.ColumnDefinitions>
 
+        <TextBlock Text="Name" Grid.Row="1" Grid.Column="0" FontSize="12" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbName" Grid.Row="1" Grid.Column="1" Height="20"/>
+
+
+        <TextBlock Text="Beløb" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbAmount" Grid.Row="2" Grid.Column="1" Height="20"/>
+
+        <Button x:Name="AddButton" Content="Add" Grid.Row="3" Grid.Column="0" Height="20" Width="35" />
+        <Button x:Name="CancelButton" Content="Cancel" Grid.Row="3" Grid.Column="1" Height="20" Width="45" />
     </Grid>
 </Window>
