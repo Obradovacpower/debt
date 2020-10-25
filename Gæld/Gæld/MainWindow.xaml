@@ -7,11 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid
-    </Grid>
-    <Grid Margin="0,0,3.333,-19.333">
-        <Slider HorizontalAlignment="Left" Margin="532,256,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="65,36,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14.333"/>
+            <RowDefinition Height="29.667"/>
+            <RowDefinition Height="57"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
 
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="156*"/>
+            <ColumnDefinition Width="66*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="399*"/>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Gæld:" Grid.Row="1" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" Margin="31,0.333,29.333,57.333" Grid.RowSpan="2"  />
+        <Button  Content="Tilføj Gæld" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Margin="1.667,5.333,2.333,5.333" Width="62" />
+        <ListBox Grid.Row="1" Name="listen" Grid.ColumnSpan="2" Margin="107,30.333,0.333,0.333" Grid.RowSpan="2"/>
     </Grid>
 </Window>
