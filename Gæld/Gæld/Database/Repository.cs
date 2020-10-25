@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Gæld.Database
 {
-    class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext context;
         public Repository(DbContext context)
@@ -18,16 +18,19 @@ namespace Gæld.Database
         public void Add(TEntity entity)
         {
             context.Set<TEntity>().Add(entity);
+            context.SaveChanges();
         }
 
         public void Delete(int id)
         {
             context.Set<TEntity>().Remove(Get(id));
+            context.SaveChanges();
         }
 
         public void Delete(TEntity entity)
         {
             context.Set<TEntity>().Remove(entity);
+            context.SaveChanges();
         }
 
         public TEntity Get(int id)
@@ -43,6 +46,7 @@ namespace Gæld.Database
         public void Update(TEntity entity)
         {
             context.Set<TEntity>().Update(entity);
+            context.SaveChanges();
         }
     }
 }
