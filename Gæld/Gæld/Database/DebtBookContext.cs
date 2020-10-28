@@ -12,7 +12,7 @@ namespace Gæld.Database
     {
         protected override void OnConfiguring(DbContextOptionsBuilder ob)
         {
-            ob.UseSqlServer(@"Data Source=localhost,1433;Database=testDB;User ID=SA;Password=SecPass1;");
+            ob.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;TrustServerCertificate=False;MultiSubnetFailover=False;database=DebtBookDb");
         }
         public DbSet<PersonEntity> Persons { get; set; }
         public DbSet<DebtEntity> Debts { get; set; }

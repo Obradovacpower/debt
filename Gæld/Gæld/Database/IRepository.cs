@@ -10,7 +10,7 @@ namespace Gæld.Database
     {
         void Add(TEntity entity);
         TEntity Get(int id);
-        IEnumerable<TEntity> Get();
+        List<TEntity> Get();
         void Delete(int id);
         void Delete(TEntity entity);
         void Update(TEntity entity);

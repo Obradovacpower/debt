@@ -38,7 +38,7 @@ namespace Gæld.Database
             return context.Set<TEntity>().Find(id);
         }
 
-        public IEnumerable<TEntity> Get()
+        public List<TEntity> Get()
         {
             return context.Set<TEntity>().ToList();
         }
