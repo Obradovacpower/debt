@@ -10,6 +10,6 @@ namespace Gæld.Classes
 {
     class PersonBB : BindableBase
     {
-        public void 
+        
     }
 }

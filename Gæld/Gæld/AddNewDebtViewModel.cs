@@ -12,18 +12,6 @@ namespace Gæld
 {
     class AddNewDebtViewModel
     {
-        public ICommand _Cancel;
 
-        public ICommand Cancel
-        {
-            get
-            {
-                return _Cancel ?? (_Cancel = new DelegateCommand(() =>
-                {
-                    
-                }
-                ));
-            }
-        }
     }
 }
