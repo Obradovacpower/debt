@@ -204,12 +204,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\PersonBB.cs" />
+    <Compile Include="Classes\Debt.cs" />
+    <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\UnitOfWork.cs" />
     <Compile Include="Database\DebtBookContext.cs" />
     <Compile Include="Database\IRepository.cs" />
-    <Compile Include="Database\Models\Debt.cs" />
-    <Compile Include="Database\Models\Person.cs" />
+    <Compile Include="Database\Models\DebtEntity.cs" />
+    <Compile Include="Database\Models\PersonEntity.cs" />
     <Compile Include="Database\Repository.cs" />
     <Compile Include="AddNewDebt.xaml.cs">
       <DependentUpon>AddNewDebt.xaml</DependentUpon>

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Gæld.Database.Models
 {
-    class Person
+    class PersonEntity
     {
         public int Id { get; set; }
-        public List<Debt> Debts { get; set; } = new List<Debt>();
+        public List<DebtEntity> Debts { get; set; } = new List<DebtEntity>();
         public string Name { get; set; }
 
     }

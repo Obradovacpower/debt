@@ -12,9 +12,9 @@ namespace Gæld.Classes
 {
     class UnitOfWork 
     {
-        protected readonly Repository<Person> persons;
-        protected readonly Repository<Debt> debts;
-        public UnitOfWork(Repository<Person> p, Repository<Debt> d)
+        protected readonly Repository<PersonEntity> persons;
+        protected readonly Repository<DebtEntity> debts;
+        public UnitOfWork(Repository<PersonEntity> p, Repository<DebtEntity> d)
         {
             persons = p;
             debts = d;
@@ -22,26 +22,35 @@ namespace Gæld.Classes
 
         public void AddPerson(string name)
         {
-            Person p = new Person();
+            PersonEntity p = new PersonEntity();
             p.Name = name;
-            p.Debts = new List<Debt>();
+            p.Debts = new List<DebtEntity>();
 
             persons.Add(p);
         }
+        public List<Person> GetPersons()
+        {
+            List<Person> newper = new List<Person>();
+            foreach(PersonEntity person in persons.Get())
+            {
+                newper.Add(new Person(person));
+            }
+            return newper;
+        }
         public void AddDebt(int amount, int personId)
         {
-            Debt d = new Debt();
+            DebtEntity d = new DebtEntity();
             d.Amount = amount;
             d.Date = DateTime.Now;
             debts.Add(d);
 
-            Person p = persons.Get(personId);
+            PersonEntity p = persons.Get(personId);
             p.Debts.Add(d);
             persons.Update(p);
         }
-        public void AddDebt(int amount, Person p)
+        public void AddDebt(int amount, PersonEntity p)
         {
-            Debt d = new Debt();
+            DebtEntity d = new DebtEntity();
             d.Amount = amount;
             d.Date = DateTime.Now;
             debts.Add(d);
