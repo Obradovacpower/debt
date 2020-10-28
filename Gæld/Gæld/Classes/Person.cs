@@ -29,6 +29,7 @@ namespace Gæld.Classes
         {
             get { return totalDebt; }
             private set { SetProperty(ref totalDebt, value); }
+        }
 
         public List<Debt> DebtList
         {
