@@ -31,7 +31,7 @@ namespace Gæld.Classes
         public List<Person> GetPersons()
         {
             List<Person> newper = new List<Person>();
-            foreach(PersonEntity person in persons.Get())
+            foreach(PersonEntity person in persons.GetInclude())
             {
                 newper.Add(new Person(person));
             }

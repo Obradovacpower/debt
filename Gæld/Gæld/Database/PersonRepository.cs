@@ -11,10 +11,10 @@ namespace Gæld.Database
 {
     class PersonRepository : Repository<PersonEntity>
     {
-        protected readonly DbContext context;
+        protected readonly DbContext db;
         public PersonRepository(DebtBookContext db) : base(db)
         {
-
+            this.db = db;
         }
         public List<PersonEntity> GetInclude()
         {
