@@ -14,19 +14,21 @@ namespace Gæld.Classes
     {
         private string name;
         private List<Debt> debtList;
+        private int totalDebt;
 
-        public Person()
-        {
-
-        }
         public Person(PersonEntity p)
         {
             name = p.Name;
             foreach(DebtEntity debt in p.Debts)
             {
                 debtList.Add(new Debt(debt));
+                totalDebt += debt.Amount;
             }
         }
+        public int TotalDebt
+        {
+            get { return totalDebt; }
+            private set { SetProperty(ref totalDebt, value); }
 
         public List<Debt> DebtList
         {
