@@ -28,6 +28,31 @@ namespace Gæld
         }
         private ICommand _addNew;
 
+        private Person _currentPerson = null;
+        private int _currentIndex = 0;
+
+        public ObservableCollection<Person> Persons
+        {
+            get { return persons; }
+            set
+            {
+                SetProperty(ref persons, value);
+            }
+        }
+
+        public Person CurrentPerson
+        {
+            get { return _currentPerson; }
+            set { SetProperty(ref _currentPerson, value); }
+        }
+
+        public int CurrentIndex
+        {
+            get { return _currentIndex; }
+            set { SetProperty(ref _currentIndex, value); }
+        } 
+
+
         public ICommand addNew
         {
             get

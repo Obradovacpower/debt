@@ -25,7 +25,8 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Gæld:" Grid.Row="1" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" Margin="13,0.333,11,56.333" Grid.RowSpan="2" Width="46"  />
         <Button  Content="Tilføj Gæld" Command="{Binding addNew}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Margin="7.667,5.333,8.333,5.333" Width="62" />
-        <DataGrid Grid.Row="1" Grid.RowSpan="2" Grid.Column="1">
+        
+        <DataGrid Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" />
                 <DataGridTextColumn Header="Debt" />
