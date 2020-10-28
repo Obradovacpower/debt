@@ -203,6 +203,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Database\PersonRepository.cs" />
     <Compile Include="Migrations\20201028144305_newInitial.cs" />
     <Compile Include="Migrations\20201028144305_newInitial.designer.cs">
       <DependentUpon>20201028144305_newInitial.cs</DependentUpon>
