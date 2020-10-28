@@ -21,7 +21,7 @@ namespace Gæld
         public Mvvm()
         {
             DebtBookContext db = new DebtBookContext();
-            Repository<PersonEntity> p = new Repository<PersonEntity>(db);
+            PersonRepository p = new PersonRepository(db);
             Repository<DebtEntity> d = new Repository<DebtEntity>(db);
             uow = new UnitOfWork(p, d);
             persons = new ObservableCollection<Person>(uow.GetPersons());
