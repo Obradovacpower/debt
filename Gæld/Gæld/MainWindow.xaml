@@ -17,15 +17,19 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="156*"/>
-            <ColumnDefinition Width="66*"/>
-            <ColumnDefinition Width="65*"/>
-            <ColumnDefinition Width="399*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="391*"/>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="254*"/>
 
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Gæld:" Grid.Row="1" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" Margin="31,0.333,29.333,57.333" Grid.RowSpan="2"  />
-        <Button  Content="Tilføj Gæld" Command="{Binding addNew}" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Margin="1.667,5.333,2.333,5.333" Width="62" />
-        <ListBox Grid.Row="1" Name="listen" Grid.ColumnSpan="2" Margin="107,30.333,0.333,0.333" Grid.RowSpan="2"/>
+        <TextBlock Text="Gæld:" Grid.Row="1" Grid.Column="0" FontSize="18" HorizontalAlignment="Center" Margin="13,0.333,11,56.333" Grid.RowSpan="2" Width="46"  />
+        <Button  Content="Tilføj Gæld" Command="{Binding addNew}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Margin="7.667,5.333,8.333,5.333" Width="62" />
+        <DataGrid Grid.Row="1" Grid.RowSpan="2" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" />
+                <DataGridTextColumn Header="Debt" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
