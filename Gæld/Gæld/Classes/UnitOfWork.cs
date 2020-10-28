@@ -12,9 +12,9 @@ namespace Gæld.Classes
 {
     class UnitOfWork 
     {
-        protected readonly Repository<PersonEntity> persons;
+        protected readonly PersonRepository persons;
         protected readonly Repository<DebtEntity> debts;
-        public UnitOfWork(Repository<PersonEntity> p, Repository<DebtEntity> d)
+        public UnitOfWork(PersonRepository p, Repository<DebtEntity> d)
         {
             persons = p;
             debts = d;
