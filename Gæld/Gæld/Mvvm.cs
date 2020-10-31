@@ -65,5 +65,18 @@ namespace Gæld
                 }));
             }
         }
+
+        public ICommand _seePersonData;
+        public ICommand seePersonData
+        {
+            get
+            {
+                return _seePersonData ?? (_seePersonData = new DelegateCommand(() =>
+                {
+                    PersonBalance pb = new PersonBalance();
+                    pb.Show();
+                }));
+            }
+        }
     }
 }
