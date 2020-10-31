@@ -40,6 +40,21 @@ namespace Gæld.Classes
 
             persons.Add(p);
         }
+        public void AddPerson(string name, int initialDebt)
+        {
+            PersonEntity p = new PersonEntity();
+            p.Name = name;
+            p.Debts = new List<DebtEntity>();
+
+            DebtEntity d = new DebtEntity();
+            d.Amount = initialDebt;
+            d.Date = DateTime.Now;
+
+            p.Debts.Add(d);
+
+            persons.Add(p);
+            Mvvm.UpdateList(new Person(p));
+        }
         public List<Person> GetPersons()
         {
             List<Person> newper = new List<Person>();

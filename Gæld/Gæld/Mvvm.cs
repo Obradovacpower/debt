@@ -16,8 +16,8 @@ namespace Gæld
 {
     class Mvvm : BindableBase
     {
-        private static ObservableCollection<Person> persons;
-        private UnitOfWork uow;
+        private static ObservableCollection<Person> persons = new ObservableCollection<Person>();
+        private static UnitOfWork uow;
         public Mvvm()
         {
             uow = UnitOfWork.GetUnitOfWork();
@@ -28,6 +28,10 @@ namespace Gæld
         private Person _currentPerson = null;
         private int _currentIndex = 0;
 
+        public static void UpdateList(Person p)
+        {
+            persons.Add(p);
+        }
         public ObservableCollection<Person> Persons
         {
             get { return persons; }

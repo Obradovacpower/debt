@@ -33,7 +33,7 @@
         <TextBlock Text="Beløb:" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,7,1,7.667" Height="16"/>
         <TextBox x:Name="tbAmount" Grid.Row="2" Grid.Column="2" Margin="0,5,3,5.667"/>
 
-        <Button x:Name="AddButton" Content="Add" Grid.Row="3" Grid.Column="1" Margin="1.333,1.333,95,0.667" Grid.ColumnSpan="2" />
+        <Button x:Name="AddButton" Click="OkButton_Click" Content="Add" Grid.Row="3" Grid.Column="1" Margin="1.333,1.333,95,0.667" Grid.ColumnSpan="2" />
         <Button x:Name="CancelButton" Content="Cancel" Grid.Row="3" Grid.Column="2" Click="CancelButton_Click" Margin="29,1.333,22,0.667" />
     </Grid>
 </Window>

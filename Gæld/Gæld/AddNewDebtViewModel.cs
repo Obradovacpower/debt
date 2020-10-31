@@ -11,13 +11,12 @@ using Prism.Mvvm;
 
 namespace Gæld
 {
-    class AddNewDebtViewModel
+    class AddNewDebtViewModel : BindableBase
     {
         private UnitOfWork uow;
         public AddNewDebtViewModel()
         {
             uow = UnitOfWork.GetUnitOfWork();
         }
-
     }
 }
