@@ -40,6 +40,7 @@
         <Button Style="{StaticResource ButtonStyle}" Content="  Cancel  " Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" />
 
         <DataGrid Grid.Row="0" Grid.Column="1" Grid.RowSpan="4">
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Beløb" />
                 <DataGridTextColumn Header="Dato" />

@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local1="clr-namespace:Gæld"
+        xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity;assembly=Microsoft.Practices.Prism.Interactivity"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local1="clr-namespace:Gæld" xmlns:i1="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
@@ -41,7 +43,13 @@
                    IsSynchronizedWithCurrentItem="True"
                    CanUserAddRows="False" 
                    CanUserDeleteRows="False" Margin="0,0,0.667,-0.333" >
-            <DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <prism: InvokeCommandAction Command="{Binding seePersonData}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+                
+                <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Debt" Binding="{Binding TotalDebt}"/>
             </DataGrid.Columns>
