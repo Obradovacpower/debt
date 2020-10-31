@@ -17,13 +17,10 @@ namespace Gæld
     class Mvvm : BindableBase
     {
         private static ObservableCollection<Person> persons;
-        private static UnitOfWork uow;
+        private UnitOfWork uow;
         public Mvvm()
         {
-            DebtBookContext db = new DebtBookContext();
-            PersonRepository p = new PersonRepository(db);
-            Repository<DebtEntity> d = new Repository<DebtEntity>(db);
-            uow = new UnitOfWork(p, d);
+            uow = UnitOfWork.GetUnitOfWork();
             persons = new ObservableCollection<Person>(uow.GetPersons());
         }
         private ICommand _addNew;

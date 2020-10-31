@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Gæld.Database.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using System.Drawing.Design;
 
 namespace Gæld.Classes
 {
@@ -14,12 +15,23 @@ namespace Gæld.Classes
     {
         protected readonly PersonRepository persons;
         protected readonly Repository<DebtEntity> debts;
-        public UnitOfWork(PersonRepository p, Repository<DebtEntity> d)
+        private static UnitOfWork instance;
+        private UnitOfWork()
         {
+            DebtBookContext db = new DebtBookContext();
+            PersonRepository p = new PersonRepository(db);
+            Repository<DebtEntity> d = new Repository<DebtEntity>(db);
             persons = p;
             debts = d;
         }
-
+        public static UnitOfWork GetUnitOfWork()
+        {
+            if(instance == null)
+            {
+                instance = new UnitOfWork();
+            }
+            return instance;
+        }
         public void AddPerson(string name)
         {
             PersonEntity p = new PersonEntity();
