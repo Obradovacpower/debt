@@ -18,12 +18,12 @@ namespace Gæld.Classes
 
         public Person(PersonEntity p)
         {
-            debtList = new List<Debt>();
             name = p.Name;
+            debtList = new List<Debt>();
             foreach(DebtEntity debt in p.Debts)
             {
-                DebtList.Add(new Debt(debt));
-                TotalDebt += debt.Amount;
+                debtList.Add(new Debt(debt));
+                totalDebt += debt.Amount;
             }
         }
         public int TotalDebt
