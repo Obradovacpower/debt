@@ -9,6 +9,18 @@
     <Window.DataContext>
         <local1:Mvvm/>
     </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Button.FontSize" Value="9pt"/>
+            <Setter Property="Button.FontWeight" Value="Bold"/>
+            <Setter Property="Button.FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="Button.Background" Value="Beige"/>
+        </Style>
+        <Style x:Key="TextBlockStyle">
+            <Setter Property="TextBlock.FontSize" Value="9pt"/>
+            <Setter Property="TextBlock.FontFamily" Value="Segoe UI Light"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -26,14 +38,14 @@
 
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Name:" Grid.Row="1" Grid.Column="1" FontSize="12" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,6,1,6" Height="16"/>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Name:" Grid.Row="1" Grid.Column="1" FontSize="12" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,6,1,6" Height="16"/>
         <TextBox x:Name="tbName" Grid.Row="1" Grid.Column="2" Margin="0,4,3,4"/>
 
 
-        <TextBlock Text="Beløb:" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,7,1,7.667" Height="16"/>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Beløb:" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,7,1,7.667" Height="16"/>
         <TextBox x:Name="tbAmount" Grid.Row="2" Grid.Column="2" Margin="0,5,3,5.667"/>
 
-        <Button x:Name="AddButton" Content="Add" Grid.Row="3" Grid.Column="1" Margin="1.333,1.333,95,0.667" Grid.ColumnSpan="2" />
-        <Button x:Name="CancelButton" Content="Cancel" Grid.Row="3" Grid.Column="2" Click="CancelButton_Click" Margin="29,1.333,22,0.667" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="AddButton" Content="Add" Grid.Row="3" Grid.Column="1" Margin="1.333,1.333,95,0.667" Grid.ColumnSpan="2" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="CancelButton" Content="Cancel" Grid.Row="3" Grid.Column="2" Click="CancelButton_Click" Margin="29,1.333,22,0.667" />
     </Grid>
 </Window>

@@ -9,6 +9,17 @@
     <Window.DataContext>
         <local1:Mvvm/>
     </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Button.FontSize" Value="9pt"/>
+            <Setter Property="Button.FontWeight" Value="Bold"/>
+            <Setter Property="Button.FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="Button.Background" Value="Beige"/>
+        </Style>
+        <Style x:Key="TextBoxStyle">
+            <Setter Property="TextBox.FontStyle" Value="Italic"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="57*"/>
@@ -24,13 +35,15 @@
             <ColumnDefinition Width="142*"/>
 
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text=" Insert Amount here " VerticalAlignment="Center" Width="120"/>
-        <Button Content=" Add Debt " Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Button Content="  Cancel  " Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" />
+        <TextBox Style="{StaticResource TextBoxStyle}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text=" Insert Amount here " VerticalAlignment="Center" Width="120"/>
+        <Button Style="{StaticResource ButtonStyle}" Content=" Add Debt " Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Button Style="{StaticResource ButtonStyle}" Content="  Cancel  " Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" />
 
         <DataGrid Grid.Row="0" Grid.Column="1" Grid.RowSpan="4">
-            <DataGridTextColumn Header="Name" />
-            <DataGridTextColumn Header="Debt" />
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Beløb" />
+                <DataGridTextColumn Header="Dato" />
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </Window>

@@ -13,7 +13,6 @@
         <Style x:Key="ButtonStyle">
             <Setter Property="Button.FontSize" Value="18pt"/>
             <Setter Property="Button.FontWeight" Value="Bold"/>
-            <Setter Property="Button.Width" Value="170"/>
             <Setter Property="Button.Background" Value="Beige"/>
         </Style>
     </Window.Resources>
